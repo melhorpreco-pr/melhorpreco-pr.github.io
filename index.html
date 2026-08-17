@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melhor Preço PR — inteligência de preços do varejo paranaense</title>
+<meta name="description" content="Preços reais de notas fiscais do Paraná inteiro, transformados em decisão: orçamento de obra otimizado e monitor de marca no varejo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🌲%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="./">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 3 L16 29" stroke="#1e6b4f" stroke-width="2.4"/>
+        <path d="M16 6 C10 10 5 10 3 9 M16 6 C22 10 27 10 29 9" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 12 C11 15 7 15 5 14 M16 12 C21 15 25 15 27 14" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 18 C12 20 9 20 8 19.5 M16 18 C20 20 23 20 24 19.5" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span><b>Melhor Preço PR</b><small>inteligência de preços · Paraná</small></span>
+    </a>
+    <nav>
+      <a href="./" class="ativo">Início</a>
+      <a href="construcao/">Obra</a>
+      <a href="industria/">Marcas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="faixa">
+  <div class="wrap">
+    <span class="selo">Notas fiscais reais · Paraná inteiro</span>
+    <h1>O preço que o Paraná pagou ontem,<br>virando a sua decisão de hoje.</h1>
+    <p class="chamada">
+      Lemos milhares de ofertas registradas em nota fiscal no programa
+      Menor Preço / Nota Paraná, dos polos de Curitiba a Foz do Iguaçu,
+      e transformamos esse dado público em duas ferramentas de decisão.
+    </p>
+    <div class="kpis" id="kpis">
+      <div class="kpi"><b class="num" id="kpi-ofertas">—</b><span>ofertas analisadas</span></div>
+      <div class="kpi"><b class="num" id="kpi-produtos">—</b><span>produtos de obra</span></div>
+      <div class="kpi"><b class="num" id="kpi-marcas">—</b><span>marcas monitoradas</span></div>
+      <div class="kpi"><b class="num" id="kpi-muns">—</b><span>municípios cobertos</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa">
+  <div class="wrap">
+    <h2>Dois problemas, duas ferramentas</h2>
+    <div class="nichos">
+      <a class="nicho nicho-obra" href="construcao/">
+        <span class="tag">Nicho 01 · Material de construção</span>
+        <h3>Orçamento de Obra Otimizado</h3>
+        <p>Monte a lista da sua obra (cimento, aço, tinta, hidráulica) e
+          descubra em segundos onde ela sai mais barata: a melhor loja única
+          e a melhor combinação de lojas, com a economia calculada.</p>
+        <span class="preco-ancora">Grátis até 10 itens · orçamento completo R$ 29–49 · painel do lojista R$ 199–499/mês</span>
+      </a>
+      <a class="nicho nicho-industria" href="industria/">
+        <span class="tag">Nicho 02 · Indústria regional</span>
+        <h3>Monitor da Marca no Varejo</h3>
+        <p>Sua marca de alimento, bebida ou limpeza está em quais redes, em
+          quais cidades, a que preço? Presença e posicionamento reais,
+          direto da nota fiscal, sem esperar pesquisa cara de painel.</p>
+        <span class="preco-ancora">Monitor mensal por marca R$ 500–2.000/mês · demonstração aberta</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="faixa faixa-escura">
+  <div class="wrap">
+    <h2>Como o dado nasce</h2>
+    <p class="chamada">
+      Cada compra com CPF/CNPJ na nota gera um registro público de preço no
+      programa Menor Preço (SEFA-PR). Nós coletamos esses registros em uma
+      malha de mais de 30 polos urbanos que cobre o varejo do estado inteiro,
+      limpamos e agregamos. Nenhum dado pessoal: só produto, loja e preço.
+    </p>
+    <p class="aviso-dados" style="border-color:#9ad8bf">
+      Cobertura atual: <span class="num" id="lista-muns">carregando…</span>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fonte">
+      Fonte: Menor Preço Nota Paraná (SEFA-PR), dados públicos de notas
+      fiscais. Atualizado em <span class="num" id="atualizado">—</span>.
+      Projeto independente; não afiliado ao Governo do Paraná.
+    </div>
+    <div>Melhor Preço PR · <a href="mailto:avnerpaesgomes@gmail.com">contato</a></div>
+  </div>
+</footer>
+
+<script>
+fetch("data/meta.json").then(r => r.json()).then(m => {
+  const f = n => n.toLocaleString("pt-BR");
+  document.getElementById("kpi-ofertas").textContent = f(m.n_ofertas);
+  document.getElementById("kpi-produtos").textContent = f(m.n_produtos_construcao);
+  document.getElementById("kpi-marcas").textContent = f(m.n_marcas);
+  document.getElementById("kpi-muns").textContent = f(m.n_municipios);
+  document.getElementById("atualizado").textContent = m.atualizado_em;
+  document.getElementById("lista-muns").textContent = m.municipios.join(" · ");
+});
+</script>
+</body>
+</html>

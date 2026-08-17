@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor da Marca — Melhor Preço PR</title>
+<meta name="description" content="Presença e preço da sua marca no varejo do Paraná, direto das notas fiscais: por rede, por município, produto a produto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E📈%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="../">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 3 L16 29" stroke="#1e6b4f" stroke-width="2.4"/>
+        <path d="M16 6 C10 10 5 10 3 9 M16 6 C22 10 27 10 29 9" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 12 C11 15 7 15 5 14 M16 12 C21 15 25 15 27 14" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 18 C12 20 9 20 8 19.5 M16 18 C20 20 23 20 24 19.5" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span><b>Melhor Preço PR</b><small>monitor da marca</small></span>
+    </a>
+    <nav>
+      <a href="../">Início</a>
+      <a href="../construcao/">Obra</a>
+      <a href="./" class="ativo">Marcas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="faixa">
+  <div class="wrap">
+    <span class="selo" style="color:var(--industria)">Nicho 02 · Indústria regional</span>
+    <h1>Sua marca, vista de dentro<br>do caixa do varejo.</h1>
+    <p class="chamada">
+      Em quais redes seu produto está? A que preço em cada bandeira, em cada
+      cidade? A demonstração abaixo usa dados reais de nota fiscal do Paraná.
+      O monitor completo acompanha a sua marca todo mês.
+    </p>
+  </div>
+</section>
+
+<section class="faixa">
+  <div class="wrap">
+    <h2>Demonstração ao vivo</h2>
+    <p style="color:var(--tinta-fraca);font-size:0.9rem">
+      Escolha uma marca detectada na coleta atual
+      (<span class="selo-pr" style="vertical-align:middle">PR</span> = indústria paranaense):
+    </p>
+    <div class="grade-marcas" id="grade-marcas"></div>
+
+    <div id="painel-marca" hidden>
+      <div class="kpis">
+        <div class="kpi"><b class="num" id="k-ofertas">—</b><span>ofertas observadas</span></div>
+        <div class="kpi"><b class="num" id="k-lojas">—</b><span>pontos de venda</span></div>
+        <div class="kpi"><b class="num" id="k-redes">—</b><span>redes / bandeiras</span></div>
+        <div class="kpi"><b class="num" id="k-muns">—</b><span>municípios</span></div>
+      </div>
+
+      <div class="duas-colunas">
+        <div class="painel">
+          <h3>Preço mediano por rede</h3>
+          <p style="font-size:0.78rem;color:var(--tinta-fraca)">
+            Mediana das ofertas da marca em cada bandeira (min–max no rótulo).</p>
+          <div class="barras" id="barras-redes"></div>
+        </div>
+        <div class="painel">
+          <h3>Presença por município</h3>
+          <p style="font-size:0.78rem;color:var(--tinta-fraca)" id="muns-marca"></p>
+          <h3 style="margin-top:16px">O que o monitor completo entrega</h3>
+          <ul style="font-size:0.85rem;list-style:none;display:flex;flex-direction:column;gap:6px">
+            <li>— Evolução mensal de preço e presença</li>
+            <li>— Comparativo com concorrentes diretos</li>
+            <li>— Ruptura: onde a marca sumiu da gôndola</li>
+            <li>— Relatório PDF mensal + planilha</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:26px">Produto a produto, rede a rede (menor preço observado)</h3>
+      <div class="matriz-scroll">
+        <table class="matriz" id="matriz"></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa" id="planos">
+  <div class="wrap">
+    <h2>Monitor da Marca — planos</h2>
+    <p class="chamada" style="margin-bottom:6px">
+      A alternativa regional a painéis de pesquisa que custam dezenas de
+      milhares: dado real de sell-out fiscal, na frequência que a sua
+      operação precisa.
+    </p>
+    <div class="planos">
+      <div class="plano">
+        <h3>Essencial</h3>
+        <div class="valor-plano">R$ 500 <small>/ mês por marca</small></div>
+        <ul>
+          <li>1 marca, até 30 SKUs</li>
+          <li>Preço e presença por rede e município</li>
+          <li>Relatório mensal (PDF + planilha)</li>
+        </ul>
+        <a class="btn btn-vazado" href="mailto:avnerpaesgomes@gmail.com?subject=Monitor da Marca — plano Essencial">Pedir proposta</a>
+      </div>
+      <div class="plano destaque">
+        <h3>Competitivo</h3>
+        <div class="valor-plano">R$ 1.200 <small>/ mês por marca</small></div>
+        <ul>
+          <li>Tudo do Essencial</li>
+          <li>+ 3 marcas concorrentes monitoradas</li>
+          <li>Alerta de movimento de preço na semana</li>
+        </ul>
+        <a class="btn btn-industria" href="mailto:avnerpaesgomes@gmail.com?subject=Monitor da Marca — plano Competitivo">Pedir proposta</a>
+      </div>
+      <div class="plano">
+        <h3>Distribuidor</h3>
+        <div class="valor-plano">R$ 2.000 <small>/ mês</small></div>
+        <ul>
+          <li>Portfólio completo do distribuidor</li>
+          <li>Cobertura estadual, todos os polos</li>
+          <li>Reunião mensal de leitura dos dados</li>
+        </ul>
+        <a class="btn btn-vazado" href="mailto:avnerpaesgomes@gmail.com?subject=Monitor da Marca — plano Distribuidor">Pedir proposta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fonte">
+      Fonte: Menor Preço Nota Paraná (SEFA-PR). Amostra de notas fiscais
+      recentes; não é auditoria de sell-out. Marcas citadas pertencem aos
+      seus detentores; a demonstração usa dados públicos.
+    </div>
+    <div><a href="../">Melhor Preço PR</a></div>
+  </div>
+</footer>
+
+<script src="../assets/js/marca.js"></script>
+</body>
+</html>

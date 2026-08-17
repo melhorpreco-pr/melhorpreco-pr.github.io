@@ -1,0 +1,246 @@
+/* Melhor Preço PR — design system
+   Estética: relatório de inteligência regional. Papel, tinta, monospace
+   para números, régua fina, verde-araucária como cor institucional. */
+
+:root {
+  --papel: #f7f4ec;
+  --papel-2: #efeadd;
+  --tinta: #14201a;
+  --tinta-fraca: #4d5a52;
+  --regua: #d8d2c2;
+  --verde: #1e6b4f;
+  --verde-escuro: #0f4534;
+  --obra: #d9480f;
+  --obra-claro: #fff0e6;
+  --industria: #2f9e44;
+  --industria-claro: #e9f7ec;
+  --alerta: #b02a37;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--papel);
+  color: var(--tinta);
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+a { color: var(--verde); }
+
+/* ---------- topo ---------- */
+.topo {
+  border-bottom: 2px solid var(--tinta);
+  background: var(--papel);
+  position: sticky; top: 0; z-index: 40;
+}
+.topo .wrap {
+  display: flex; align-items: center; gap: 14px;
+  padding-top: 10px; padding-bottom: 10px;
+}
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--tinta); }
+.logo svg { width: 30px; height: 30px; }
+.logo b { font-size: 1.05rem; letter-spacing: -0.01em; }
+.logo small {
+  display: block; font-family: var(--mono); font-size: 0.62rem;
+  color: var(--tinta-fraca); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.topo nav { margin-left: auto; display: flex; gap: 4px; }
+.topo nav a {
+  text-decoration: none; color: var(--tinta); font-size: 0.88rem;
+  padding: 7px 12px; border: 1px solid transparent; border-radius: 4px;
+}
+.topo nav a:hover { border-color: var(--tinta); }
+.topo nav a.ativo { background: var(--tinta); color: var(--papel); }
+
+/* ---------- blocos ---------- */
+.faixa { padding: 56px 0; border-bottom: 1px solid var(--regua); }
+.faixa-escura { background: var(--verde-escuro); color: var(--papel); }
+.faixa-escura a { color: #9ad8bf; }
+
+.selo {
+  display: inline-block; font-family: var(--mono); font-size: 0.68rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  border: 1px solid currentColor; border-radius: 3px;
+  padding: 3px 10px; margin-bottom: 18px;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.08; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.01em; margin-bottom: 12px; }
+h3 { font-size: 1.05rem; margin-bottom: 8px; }
+
+.chamada { font-size: 1.12rem; color: var(--tinta-fraca); max-width: 640px; margin-top: 16px; }
+.faixa-escura .chamada { color: #c4dccf; }
+
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* ---------- cartões dos nichos ---------- */
+.nichos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 34px; }
+.nicho {
+  border: 2px solid var(--tinta); border-radius: 8px; background: #fff;
+  padding: 26px; display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; color: var(--tinta);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.nicho:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--tinta); }
+.nicho .tag { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.nicho-obra .tag { color: var(--obra); }
+.nicho-industria .tag { color: var(--industria); }
+.nicho p { color: var(--tinta-fraca); font-size: 0.94rem; }
+.nicho .preco-ancora { font-family: var(--mono); font-size: 0.8rem; margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--regua); }
+
+/* ---------- kpis ---------- */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 26px 0; }
+.kpi { border: 1px solid var(--regua); border-radius: 6px; background: #fff; padding: 14px 16px; }
+.kpi b { display: block; font-family: var(--mono); font-size: 1.6rem; letter-spacing: -0.02em; }
+.kpi span { font-size: 0.78rem; color: var(--tinta-fraca); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ---------- botões ---------- */
+.btn {
+  display: inline-block; font-family: var(--sans); font-weight: 600;
+  font-size: 0.92rem; text-decoration: none; cursor: pointer;
+  border: 2px solid var(--tinta); border-radius: 5px;
+  padding: 10px 20px; background: var(--tinta); color: var(--papel);
+}
+.btn:hover { background: var(--verde-escuro); border-color: var(--verde-escuro); }
+.btn-vazado { background: transparent; color: var(--tinta); }
+.btn-vazado:hover { background: var(--tinta); color: var(--papel); }
+.btn-obra { background: var(--obra); border-color: var(--obra); }
+.btn-obra:hover { background: #b93a09; border-color: #b93a09; }
+.btn-industria { background: var(--industria); border-color: var(--industria); }
+.btn-industria:hover { background: #25803a; border-color: #25803a; }
+
+/* ---------- formulários ---------- */
+input[type="search"], input[type="text"], select {
+  font-family: var(--sans); font-size: 0.95rem;
+  border: 2px solid var(--tinta); border-radius: 5px;
+  padding: 10px 14px; background: #fff; color: var(--tinta); width: 100%;
+}
+input:focus, select:focus { outline: 3px solid rgba(30, 107, 79, 0.35); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.chip {
+  font-family: var(--mono); font-size: 0.72rem; cursor: pointer;
+  border: 1px solid var(--tinta-fraca); border-radius: 99px;
+  padding: 4px 12px; background: transparent; color: var(--tinta);
+}
+.chip.ativo { background: var(--tinta); color: var(--papel); border-color: var(--tinta); }
+
+/* ---------- listas de resultado ---------- */
+.resultados { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.item-res {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  border: 1px solid var(--regua); border-radius: 6px; background: #fff;
+  padding: 10px 14px;
+}
+.item-res .desc { flex: 1 1 260px; font-size: 0.9rem; }
+.item-res .faixa-preco { font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
+.item-res .n-lojas { font-family: var(--mono); font-size: 0.72rem; color: var(--tinta-fraca); white-space: nowrap; }
+
+/* ---------- orçamento (nicho 1) ---------- */
+.duas-colunas { display: grid; grid-template-columns: 1.2fr 1fr; gap: 26px; align-items: start; }
+@media (max-width: 860px) { .duas-colunas { grid-template-columns: 1fr; } }
+
+.painel {
+  border: 2px solid var(--tinta); border-radius: 8px; background: #fff;
+  padding: 20px;
+}
+.painel-obra { border-color: var(--obra); }
+.painel h3 { display: flex; align-items: baseline; justify-content: space-between; }
+.contador { font-family: var(--mono); font-size: 0.75rem; color: var(--tinta-fraca); }
+
+.lista-orc { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 12px 0; }
+.lista-orc li {
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px dashed var(--regua); padding: 6px 0; font-size: 0.87rem;
+}
+.lista-orc .qtd { display: flex; align-items: center; gap: 4px; }
+.lista-orc .qtd button {
+  width: 22px; height: 22px; border: 1px solid var(--tinta); background: #fff;
+  border-radius: 3px; cursor: pointer; font-family: var(--mono); line-height: 1;
+}
+.lista-orc .qtd span { font-family: var(--mono); min-width: 20px; text-align: center; }
+.lista-orc .rm { margin-left: auto; border: none; background: none; color: var(--alerta); cursor: pointer; font-size: 1rem; }
+
+.veredito { border-top: 2px solid var(--tinta); margin-top: 14px; padding-top: 14px; }
+.veredito .linha { display: flex; justify-content: space-between; gap: 10px; font-size: 0.9rem; padding: 4px 0; }
+.veredito .linha b.num { font-size: 1.05rem; }
+.economia { background: var(--industria-claro); border: 1px solid var(--industria); border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 0.92rem; }
+
+.grupo-loja { border: 1px solid var(--regua); border-radius: 6px; padding: 10px 14px; margin-top: 8px; background: var(--papel); }
+.grupo-loja h4 { font-size: 0.9rem; display: flex; justify-content: space-between; }
+.grupo-loja ul { list-style: none; font-size: 0.82rem; color: var(--tinta-fraca); margin-top: 6px; }
+.grupo-loja li { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
+
+/* ---------- monitor de marca (nicho 2) ---------- */
+.grade-marcas { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.btn-marca {
+  font-family: var(--sans); font-weight: 600; font-size: 0.88rem; cursor: pointer;
+  border: 2px solid var(--tinta); border-radius: 6px; background: #fff;
+  padding: 8px 16px; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-marca.ativo { background: var(--industria); border-color: var(--industria); color: #fff; }
+.selo-pr {
+  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+  background: var(--verde); color: #fff; border-radius: 3px; padding: 1px 6px;
+}
+.btn-marca.ativo .selo-pr { background: #fff; color: var(--industria); }
+
+.barras { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.barra-linha { display: grid; grid-template-columns: 150px 1fr 90px; gap: 10px; align-items: center; font-size: 0.85rem; }
+.barra-linha .rotulo { text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.barra-trilho { background: var(--papel-2); border-radius: 3px; height: 22px; position: relative; }
+.barra-fill { position: absolute; inset: 0 auto 0 0; background: var(--industria); border-radius: 3px; min-width: 2px; }
+.barra-linha .valor { font-family: var(--mono); font-size: 0.8rem; text-align: right; }
+
+table.matriz { width: 100%; border-collapse: collapse; font-size: 0.82rem; background: #fff; }
+.matriz-scroll { overflow-x: auto; border: 1px solid var(--regua); border-radius: 6px; margin-top: 14px; }
+table.matriz th, table.matriz td { padding: 8px 10px; border-bottom: 1px solid var(--regua); text-align: right; white-space: nowrap; }
+table.matriz th:first-child, table.matriz td:first-child { text-align: left; white-space: normal; min-width: 220px; }
+table.matriz thead th { background: var(--papel-2); font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; position: sticky; top: 0; }
+table.matriz td { font-family: var(--mono); }
+table.matriz td.melhor { color: var(--industria); font-weight: 700; }
+
+/* ---------- planos / CTA ---------- */
+.planos { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 26px; }
+.plano { border: 2px solid var(--tinta); border-radius: 8px; background: #fff; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.plano.destaque { background: var(--tinta); color: var(--papel); }
+.plano .valor-plano { font-family: var(--mono); font-size: 1.5rem; }
+.plano .valor-plano small { font-size: 0.75rem; color: inherit; opacity: 0.7; }
+.plano ul { list-style: none; font-size: 0.88rem; display: flex; flex-direction: column; gap: 6px; }
+.plano li::before { content: "— "; opacity: 0.5; }
+.plano .btn { margin-top: auto; text-align: center; }
+
+/* ---------- modal ---------- */
+dialog {
+  border: 2px solid var(--tinta); border-radius: 8px; padding: 30px;
+  max-width: 460px; background: var(--papel); color: var(--tinta);
+}
+dialog::backdrop { background: rgba(20, 32, 26, 0.55); }
+dialog h3 { font-size: 1.25rem; margin-bottom: 10px; }
+dialog p { font-size: 0.92rem; color: var(--tinta-fraca); margin-bottom: 16px; }
+dialog .acoes { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- rodapé ---------- */
+footer { padding: 40px 0 60px; color: var(--tinta-fraca); font-size: 0.82rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+footer .fonte { font-family: var(--mono); font-size: 0.72rem; max-width: 520px; }
+
+.aviso-dados {
+  font-family: var(--mono); font-size: 0.72rem; color: var(--tinta-fraca);
+  border-left: 3px solid var(--verde); padding-left: 12px; margin-top: 20px;
+}
+
+[hidden] { display: none !important; }
+
+@media (max-width: 640px) {
+  .topo nav a { padding: 6px 8px; font-size: 0.8rem; }
+  .barra-linha { grid-template-columns: 100px 1fr 80px; }
+}
