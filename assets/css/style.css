@@ -244,3 +244,20 @@ footer .fonte { font-family: var(--mono); font-size: 0.72rem; max-width: 520px; 
   .topo nav a { padding: 6px 8px; font-size: 0.8rem; }
   .barra-linha { grid-template-columns: 100px 1fr 80px; }
 }
+
+/* ---------- carrinho por nicho ---------- */
+.abas { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; border-bottom: 2px solid var(--tinta); }
+.aba {
+  font: 600 0.9rem var(--sans); padding: 8px 14px; cursor: pointer;
+  background: var(--papel-2); color: var(--tinta); border: 1px solid var(--regua);
+  border-bottom: none; border-radius: 6px 6px 0 0;
+}
+.aba .num { font-size: 0.7rem; color: var(--tinta-fraca); margin-left: 4px; }
+.aba.ativo { background: var(--tinta); color: var(--papel); border-color: var(--tinta); }
+.aba.ativo .num { color: var(--papel); }
+.rotulo { display: block; font-size: 0.78rem; color: var(--tinta-fraca); margin: 10px 0 4px; }
+.dica { font-size: 0.85rem; color: var(--tinta-fraca); }
+.veredito .sub { font-size: 0.72rem; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--tinta-fraca); margin: 12px 0 2px; }
+.veredito .vencedor { background: var(--obra-claro); border-radius: 6px; padding: 6px 8px; }
+.local { display: block; color: var(--tinta-fraca); font-size: 0.76rem; }
+.falta { color: var(--alerta); font-size: 0.8rem; }

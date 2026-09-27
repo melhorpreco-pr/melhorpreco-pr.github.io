@@ -1,0 +1,100 @@
+[
+ {
+  "id": "mercado",
+  "nome": "Mercado",
+  "n_produtos": 2370,
+  "municipios": [
+   "Almirante Tamandare",
+   "Bocaiuva Do Sul",
+   "Campo Largo",
+   "Campo Magro",
+   "Colombo",
+   "Curitiba",
+   "Guapirama",
+   "Itaperucu",
+   "Pinhais",
+   "Piraquara",
+   "Planalto",
+   "Rio Branco Do Sul",
+   "Salto Do Itarare",
+   "Santa Monica",
+   "Sao Jose Dos Pinhais"
+  ]
+ },
+ {
+  "id": "farmacia",
+  "nome": "Farmácia",
+  "n_produtos": 182,
+  "municipios": [
+   "Almirante Tamandare",
+   "Campo Magro",
+   "Colombo",
+   "Curitiba",
+   "Itaperucu",
+   "Pinhais",
+   "Piraquara",
+   "Rio Branco Do Sul",
+   "Sao Jose Dos Pinhais"
+  ]
+ },
+ {
+  "id": "construcao",
+  "nome": "Construção",
+  "n_produtos": 1832,
+  "municipios": [
+   "Almirante Tamandare",
+   "Araucaria",
+   "Bocaiuva Do Sul",
+   "Campo Largo",
+   "Campo Magro",
+   "Colombo",
+   "Curitiba",
+   "Itaperucu",
+   "Pinhais",
+   "Piraquara",
+   "Rio Branco Do Sul",
+   "Santa Monica",
+   "Sao Jose Dos Pinhais"
+  ]
+ },
+ {
+  "id": "eletronicos",
+  "nome": "Eletrônicos",
+  "n_produtos": 223,
+  "municipios": [
+   "Almirante Tamandare",
+   "Colombo",
+   "Curitiba",
+   "Pinhais",
+   "Rio Branco Do Sul",
+   "Sao Jose Dos Pinhais"
+  ]
+ },
+ {
+  "id": "pet",
+  "nome": "Pet",
+  "n_produtos": 184,
+  "municipios": [
+   "Almirante Tamandare",
+   "Colombo",
+   "Curitiba",
+   "Itaperucu",
+   "Pinhais",
+   "Piraquara",
+   "Rio Branco Do Sul",
+   "Sao Jose Dos Pinhais"
+  ]
+ },
+ {
+  "id": "casa",
+  "nome": "Casa e jardim",
+  "n_produtos": 108,
+  "municipios": [
+   "Campo Magro",
+   "Colombo",
+   "Curitiba",
+   "Pinhais",
+   "Sao Jose Dos Pinhais"
+  ]
+ }
+]

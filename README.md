@@ -9,14 +9,15 @@ Site estático publicado em <https://melhorpreco-pr.github.io>.
 
 | Nicho | Ferramenta | Modelo |
 |---|---|---|
-| Material de construção | **Orçamento de Obra Otimizado** (`/construcao/`) — melhor loja única + melhor combinação de lojas para a lista da obra | Grátis até 10 itens · completo R$ 29–49 · painel do lojista R$ 199–499/mês |
+| Varejo por nicho (abas: mercado, farmácia, construção, eletrônicos, pet, casa) | **Carrinho mais barato** (`/carrinho/#<nicho>`): filtro por município, top 3 lojas únicas, melhor dupla e menor preço item a item, com endereço e mapa | Grátis até 10 itens · completo R$ 29–49 · painel do lojista R$ 199–499/mês |
 | Indústria regional (alimentos, bebidas, limpeza) | **Monitor da Marca** (`/industria/`) — presença e preço da marca por rede e município | R$ 500–2.000/mês por marca |
 
 ## Estrutura
 
 ```
 index.html            landing
-construcao/           nicho 1 — orçamento de obra
+carrinho/             carrinho por nicho (abas via #hash; nichos em NICHOS do build)
+construcao/           redirect para carrinho/#construcao
 industria/            nicho 2 — monitor de marca
 assets/css|js/        design system + apps client-side (sem framework)
 data/                 JSONs gerados pelo pipeline (não editar à mão)

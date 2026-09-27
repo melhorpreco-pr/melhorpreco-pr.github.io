@@ -26,7 +26,7 @@
     </a>
     <nav>
       <a href="./" class="ativo">Início</a>
-      <a href="construcao/">Obra</a>
+      <a href="carrinho/">Carrinho</a>
       <a href="industria/">Marcas</a>
     </nav>
   </div>
@@ -43,7 +43,7 @@
     </p>
     <div class="kpis" id="kpis">
       <div class="kpi"><b class="num" id="kpi-ofertas">—</b><span>ofertas analisadas</span></div>
-      <div class="kpi"><b class="num" id="kpi-produtos">—</b><span>produtos de obra</span></div>
+      <div class="kpi"><b class="num" id="kpi-produtos">—</b><span>produtos comparados</span></div>
       <div class="kpi"><b class="num" id="kpi-marcas">—</b><span>marcas monitoradas</span></div>
       <div class="kpi"><b class="num" id="kpi-muns">—</b><span>municípios cobertos</span></div>
     </div>
@@ -54,13 +54,13 @@
   <div class="wrap">
     <h2>Dois problemas, duas ferramentas</h2>
     <div class="nichos">
-      <a class="nicho nicho-obra" href="construcao/">
-        <span class="tag">Nicho 01 · Material de construção</span>
-        <h3>Orçamento de Obra Otimizado</h3>
-        <p>Monte a lista da sua obra (cimento, aço, tinta, hidráulica) e
-          descubra em segundos onde ela sai mais barata: a melhor loja única
-          e a melhor combinação de lojas, com a economia calculada.</p>
-        <span class="preco-ancora">Grátis até 10 itens · orçamento completo R$ 29–49 · painel do lojista R$ 199–499/mês</span>
+      <a class="nicho nicho-obra" href="carrinho/">
+        <span class="tag">Mercado · Farmácia · Construção · Eletrônicos · Pet · Casa</span>
+        <h3>Carrinho mais barato, por nicho</h3>
+        <p>Monte o carrinho em cada aba e descubra onde ele sai mais barato
+          na sua cidade: a melhor loja única, a melhor dupla de lojas e o
+          menor preço item a item, com endereço, mapa e economia calculada.</p>
+        <span class="preco-ancora">Grátis até 10 itens · carrinho completo R$ 29–49 · painel do lojista R$ 199–499/mês</span>
       </a>
       <a class="nicho nicho-industria" href="industria/">
         <span class="tag">Nicho 02 · Indústria regional</span>
@@ -104,7 +104,7 @@
 fetch("data/meta.json").then(r => r.json()).then(m => {
   const f = n => n.toLocaleString("pt-BR");
   document.getElementById("kpi-ofertas").textContent = f(m.n_ofertas);
-  document.getElementById("kpi-produtos").textContent = f(m.n_produtos_construcao);
+  document.getElementById("kpi-produtos").textContent = f(m.n_produtos);
   document.getElementById("kpi-marcas").textContent = f(m.n_marcas);
   document.getElementById("kpi-muns").textContent = f(m.n_municipios);
   document.getElementById("atualizado").textContent = m.atualizado_em;

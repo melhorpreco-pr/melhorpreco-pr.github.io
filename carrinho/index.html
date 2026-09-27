@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrinho mais barato · Melhor Preço PR</title>
+<meta name="description" content="Monte seu carrinho de mercado, farmácia, construção, eletrônicos e mais, e veja em qual loja do Paraná ele sai mais barato, com endereço e mapa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🛒%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="../">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 3 L16 29" stroke="#1e6b4f" stroke-width="2.4"/>
+        <path d="M16 6 C10 10 5 10 3 9 M16 6 C22 10 27 10 29 9" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 12 C11 15 7 15 5 14 M16 12 C21 15 25 15 27 14" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M16 18 C12 20 9 20 8 19.5 M16 18 C20 20 23 20 24 19.5" stroke="#1e6b4f" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span><b>Melhor Preço PR</b><small>carrinho mais barato</small></span>
+    </a>
+    <nav>
+      <a href="../">Início</a>
+      <a href="./" class="ativo">Carrinho</a>
+      <a href="../industria/">Marcas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="faixa">
+  <div class="wrap">
+    <span class="selo" style="color:var(--obra)">Preços de nota fiscal · Paraná</span>
+    <h1>Seu carrinho,<br>na loja mais barata do Paraná.</h1>
+    <p class="chamada">
+      Escolha o nicho, monte o carrinho e veja onde ele sai mais barato:
+      a melhor loja única, a melhor dupla de lojas e o menor preço item a
+      item, com endereço e mapa. Grátis até 10 itens por carrinho.
+    </p>
+    <div class="abas" id="abas" role="tablist"></div>
+  </div>
+</section>
+
+<section class="faixa">
+  <div class="wrap duas-colunas">
+    <div>
+      <h2>1 · Encontre o produto em <span id="nome-nicho">…</span></h2>
+      <label class="rotulo" for="municipio">Onde você compra</label>
+      <select id="municipio"><option value="">Todo o Paraná</option></select>
+      <input type="search" id="busca" placeholder="Busque pelo nome do produto…" autocomplete="off" style="margin-top:10px">
+      <div class="chips" id="chips-cat"></div>
+      <div class="resultados" id="resultados"></div>
+    </div>
+
+    <div class="painel painel-obra">
+      <h3>2 · Seu carrinho <span class="contador"><span id="n-itens">0</span>/10 itens grátis</span></h3>
+      <ul class="lista-orc" id="lista"></ul>
+      <p id="lista-vazia" class="dica">Nenhum item ainda. Busque ao lado e clique em “+ carrinho”.</p>
+      <div class="veredito" id="veredito" hidden>
+        <h3>3 · Onde comprar</h3>
+        <div id="loja-unica"></div>
+        <div id="dupla"></div>
+        <div id="combo"></div>
+        <div class="economia" id="economia"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa" id="planos">
+  <div class="wrap">
+    <h2>Para quem compra, e para quem vende</h2>
+    <div class="planos">
+      <div class="plano">
+        <h3>Lista rápida</h3>
+        <div class="valor-plano">R$ 0</div>
+        <ul>
+          <li>Até 10 itens por carrinho</li>
+          <li>Melhor loja única e melhor combinação</li>
+          <li>Preços de nota fiscal, atualizados</li>
+        </ul>
+        <a class="btn btn-vazado" href="#">Usar agora</a>
+      </div>
+      <div class="plano destaque">
+        <h3>Carrinho completo</h3>
+        <div class="valor-plano">R$ 29–49 <small>/ carrinho</small></div>
+        <ul>
+          <li>Itens ilimitados (compra do mês, obra inteira)</li>
+          <li>Planilha com endereço e rota por loja</li>
+          <li>Alerta de queda de preço por 30 dias</li>
+        </ul>
+        <a class="btn btn-obra" href="mailto:avnerpaesgomes@gmail.com?subject=Carrinho completo — Melhor Preço PR">Pedir carrinho completo</a>
+      </div>
+      <div class="plano">
+        <h3>Painel do lojista</h3>
+        <div class="valor-plano">R$ 199–499 <small>/ mês</small></div>
+        <ul>
+          <li>Seu preço vs. a região, item a item</li>
+          <li>Onde você perde venda por preço</li>
+          <li>Relatório semanal por e-mail</li>
+        </ul>
+        <a class="btn btn-vazado" href="mailto:avnerpaesgomes@gmail.com?subject=Painel do lojista — Melhor Preço PR">Falar com a gente</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fonte">
+      Fonte: Menor Preço Nota Paraná (SEFA-PR). Preços observados em notas
+      fiscais recentes; confirme na loja antes de fechar a compra.
+    </div>
+    <div><a href="../">Melhor Preço PR</a></div>
+  </div>
+</footer>
+
+<dialog id="modal-limite">
+  <h3>Seu carrinho passou de 10 itens 🛒</h3>
+  <p>O plano grátis compara até 10 itens por carrinho. Para a compra
+     inteira, com planilha final, endereços e alerta de preço por 30 dias,
+     peça o carrinho completo (R$ 29–49, entrega em até 1 dia útil).</p>
+  <div class="acoes">
+    <a class="btn btn-obra" href="mailto:avnerpaesgomes@gmail.com?subject=Carrinho completo — Melhor Preço PR">Pedir carrinho completo</a>
+    <button class="btn btn-vazado" id="fechar-modal">Continuar com 10</button>
+  </div>
+</dialog>
+
+<script src="../assets/js/carrinho.js"></script>
+</body>
+</html>
