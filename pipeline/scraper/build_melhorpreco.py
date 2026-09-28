@@ -236,8 +236,9 @@ def main():
                 ofertas.append(o)
 
     if len(ofertas) < MIN_OFERTAS:
-        raise SystemExit(f"só {len(ofertas)} ofertas válidas (< {MIN_OFERTAS}); "
-                         "mantendo os dados publicados")
+        print(f"só {len(ofertas)} ofertas válidas (< {MIN_OFERTAS}); "
+              "mantendo os dados publicados")
+        raise SystemExit(3)  # 3 = sem dados suficientes (o workflow não publica)
 
     # ---------- carrinhos por nicho ----------
     produtos = produtos_por_categoria(ofertas)

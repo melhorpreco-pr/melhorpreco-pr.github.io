@@ -56,9 +56,13 @@ jobs:
           key: raw-${{ github.run_id }}
 
       - name: Gerar JSONs do site
-        run: python pipeline/scraper/build_melhorpreco.py --repo . --max-dias 30
+        id: build
+        # exit 3 = poucas ofertas válidas (API em isca): não é erro, só não publica
+        run: |
+          python pipeline/scraper/build_melhorpreco.py --repo . --max-dias 30 && echo "ok=1" >> "$GITHUB_OUTPUT" || [ $? -eq 3 ]
 
       - name: Publicar se mudou
+        if: steps.build.outputs.ok == '1'
         run: |
           git config user.name "melhorpreco-bot"
           git config user.email "actions@users.noreply.github.com"
