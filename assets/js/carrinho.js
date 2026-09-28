@@ -21,8 +21,9 @@ const plural = (n, s, p) => `${n} ${n === 1 ? s : p}`;
 const carrinho = () => carrinhos.get(nicho.id);
 const mapa = (of) => "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent(`${of.fan}, ${of.end}, ${of.mun} - PR`);
+const quando = (of) => of.dt ? ` · nota de ${of.dt.split("-").reverse().join("/")}` : "";
 const local = (of) =>
-  `<small class="local">${esc(of.end)} · ${esc(of.mun)} · <a href="${mapa(of)}" target="_blank" rel="noopener">ver no mapa</a></small>`;
+  `<small class="local">${esc(of.end)} · ${esc(of.mun)}${quando(of)} · <a href="${mapa(of)}" target="_blank" rel="noopener">ver no mapa</a></small>`;
 
 if (typeof document !== "undefined") fetch("../data/nichos.json")
   .then((r) => r.json())

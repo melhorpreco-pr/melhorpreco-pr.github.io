@@ -46,3 +46,15 @@ py -3 scraper/build_melhorpreco.py   # no repo bestprice
 cd melhorpreco-pr.github.io
 git add data && git commit -m "chore: atualiza dados" && git push
 ```
+
+## Atualização automática
+
+`.github/workflows/atualizar-precos.yml` roda 3×/dia (01:17, 09:17, 17:17 UTC).
+Cada execução coleta 1/3 dos termos de `pipeline/data/termos.json` em Curitiba
+(~110 requisições a 5 s, abaixo do limite do anti-bot), guarda os brutos dos
+últimos 30 dias no cache do Actions, roda o build e faz commit de `data/`
+se algo mudou. Se a API devolver isca, o coletor para e o build só publica
+com ≥ 300 ofertas válidas. Cada preço no site mostra a data da nota.
+
+Rodar à mão: aba Actions → "Atualizar preços" → Run workflow (fatia `0/3`, `1/3`, `2/3`).
+Para cobrir mais produtos, acrescente termos em `pipeline/data/termos.json`.

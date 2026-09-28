@@ -1,0 +1,68 @@
+name: Atualizar preços
+
+# 3 execuções por dia; cada uma coleta 1/3 dos termos de pipeline/data/termos.json
+# (~55 termos, até 110 requisições a 5 s), bem abaixo do limite do anti-bot.
+# Os dados brutos dos últimos 30 dias ficam no cache do Actions entre execuções.
+on:
+  schedule:
+    - cron: "17 1,9,17 * * *"   # UTC; fatia = hora // 8
+  workflow_dispatch:
+    inputs:
+      fatia:
+        description: "i/3 (vazio = pela hora)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-precos
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restaurar dados brutos
+        uses: actions/cache/restore@v4
+        with:
+          path: pipeline/data/raw
+          key: raw-${{ github.run_id }}
+          restore-keys: raw-
+
+      - name: Coletar fatia de termos (Curitiba)
+        run: |
+          FATIA="${{ inputs.fatia }}"
+          [ -z "$FATIA" ] && FATIA="$(( 10#$(date -u +%H) / 8 ))/3"
+          echo "fatia $FATIA"
+          # exit 2 = anti-bot detectado: guarda o parcial e segue para o build
+          python pipeline/scraper/collect.py --termos --pontos curitiba_centro \
+            --fatia "$FATIA" --pausa 5 || [ $? -eq 2 ]
+
+      - name: Salvar dados brutos
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: pipeline/data/raw
+          key: raw-${{ github.run_id }}
+
+      - name: Gerar JSONs do site
+        run: python pipeline/scraper/build_melhorpreco.py --repo . --max-dias 30
+
+      - name: Publicar se mudou
+        run: |
+          git config user.name "melhorpreco-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -m "dados: coleta $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
