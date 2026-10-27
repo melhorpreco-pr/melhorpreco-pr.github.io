@@ -1,36 +1,23 @@
 {
  "fonte": "Menor Preço Nota Paraná (SEFA-PR) — notas fiscais reais",
- "atualizado_em": "2026-09-27",
- "n_ofertas": 8482,
- "n_produtos": 4783,
+ "atualizado_em": "2026-10-27",
+ "n_ofertas": 898,
+ "n_produtos": 288,
  "nichos": {
-  "mercado": 2370,
-  "farmacia": 182,
-  "construcao": 1832,
-  "eletronicos": 223,
-  "pet": 184,
-  "casa": 108
+  "mercado": 288
  },
- "n_marcas": 19,
- "n_municipios": 18,
+ "n_marcas": 2,
+ "n_municipios": 10,
  "municipios": [
-  "23132",
   "Almirante Tamandare",
   "Araucaria",
-  "Bocaiuva Do Sul",
+  "Boa Esperanca",
   "Campo Largo",
   "Campo Magro",
   "Colombo",
   "Curitiba",
-  "Guapirama",
-  "Itaperucu",
   "Pinhais",
   "Piraquara",
-  "Planalto",
-  "Rio Branco Do Sul",
-  "Salto Do Itarare",
-  "Santa Monica",
-  "Sao Jose Dos Pinhais",
-  "Serranopolis Do Iguacu"
+  "Sao Jose Dos Pinhais"
  ]
 }
