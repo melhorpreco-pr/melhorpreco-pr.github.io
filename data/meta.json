@@ -1,16 +1,15 @@
 {
  "fonte": "Menor Preço Nota Paraná (SEFA-PR) — notas fiscais reais",
- "atualizado_em": "2026-11-20",
- "n_ofertas": 662,
- "n_produtos": 213,
+ "atualizado_em": "2026-11-21",
+ "n_ofertas": 624,
+ "n_produtos": 200,
  "nichos": {
-  "mercado": 213
+  "mercado": 200
  },
  "n_marcas": 2,
- "n_municipios": 10,
+ "n_municipios": 9,
  "municipios": [
   "Almirante Tamandare",
-  "Araucaria",
   "Boa Esperanca",
   "Campo Largo",
   "Campo Magro",

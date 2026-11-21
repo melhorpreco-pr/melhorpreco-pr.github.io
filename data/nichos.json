@@ -2,10 +2,9 @@
  {
   "id": "mercado",
   "nome": "Mercado",
-  "n_produtos": 213,
+  "n_produtos": 200,
   "municipios": [
    "Almirante Tamandare",
-   "Araucaria",
    "Boa Esperanca",
    "Campo Largo",
    "Campo Magro",
